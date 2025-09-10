@@ -1,95 +1,109 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Monster Survivors - Play Free Online Survival Game</title>
-  <meta name="description" content="Play Monster Survivors, a thrilling survival action game. Fight endless monsters, unlock skills, and see how long you can survive. Free to play online now!" />
-  <link rel="canonical" href="https://monstersurvivors.com/" />
+  <title>LovePlaying.online - Play Free Online Games</title>
+  <meta name="description" content="Discover free online games at LovePlaying.online. Play Monster Survivors and explore the latest and most popular games in multiple categories." />
+  <link rel="canonical" href="https://loveplaying.online/" />
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-white text-gray-900 font-sans antialiased">
+
   <!-- Header -->
+  <!-- ⚠️ GitHub Pages 不支持 include，这里直接复制 header.html 内容 -->
   <header class="w-full bg-white shadow-sm sticky top-0 z-50">
-    <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
-      <h1 class="text-2xl font-bold text-blue-600">Monster Survivors</h1>
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <h1 class="text-2xl font-bold text-blue-600">LovePlaying.online</h1>
       <nav>
         <ul class="flex gap-6 text-gray-700 font-medium">
-          <li><a href="#about" class="hover:text-blue-600">About</a></li>
-          <li><a href="#how-to-play" class="hover:text-blue-600">How to Play</a></li>
-          <li><a href="#features" class="hover:text-blue-600">Features</a></li>
+          <li><a href="index.html" class="hover:text-blue-600">首页</a></li>
+          <li><a href="category.html" class="hover:text-blue-600">分类</a></li>
+          <li><a href="latest.html" class="hover:text-blue-600">最新游戏</a></li>
+          <li><a href="popular.html" class="hover:text-blue-600">热门游戏</a></li>
+          <li><a href="about.html" class="hover:text-blue-600">关于我们</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Main Content -->
-  <main class="max-w-5xl mx-auto px-4 py-10">
-    <!-- Game Title -->
-    <section class="mb-8 text-center">
-      <h1 class="text-4xl font-extrabold text-gray-900 mb-4">Monster Survivors</h1>
-      <p class="text-lg text-gray-600">A fast-paced survival game where every second counts.</p>
-    </section>
+  <!-- Banner 推荐游戏 -->
+  <section class="bg-gray-50 py-12">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Monster Survivors</h2>
+        <p class="text-gray-600 mb-6">A thrilling survival game where you must fight endless waves of monsters.</p>
+        <a href="game.html" class="inline-block bg-blue-600 text-white px-5 py-3 rounded-lg hover:bg-blue-700">立即开始</a>
+      </div>
+      <div>
+        <img src="assets/monster-survivors-banner.jpg" alt="Monster Survivors Banner" class="rounded-xl shadow-lg">
+      </div>
+    </div>
+  </section>
 
-    <!-- Game Iframe -->
-    <section class="mb-12">
-      <div class="relative w-full" style="padding-top: 56.25%;">
-        <iframe src="https://cloud.onlinegames.io/games/2025/unity/monster-survivors/index-og.html"
-          class="absolute top-0 left-0 w-full h-full rounded-2xl shadow-md"
-          frameborder="0" allowfullscreen></iframe>
+  <main class="max-w-6xl mx-auto px-4 py-12">
+    <!-- 分类入口 -->
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">游戏分类</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <article class="bg-white shadow rounded-xl p-6 flex flex-col items-center text-center hover:shadow-lg transition">
+          <img src="assets/category-action.png" alt="动作类" class="w-16 h-16 mb-4">
+          <h3 class="text-lg font-semibold text-gray-900">动作类</h3>
+          <p class="text-sm text-gray-600 mb-3">体验快节奏的战斗和冒险。</p>
+          <a href="category.html" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">查看分类</a>
+        </article>
+        <article class="bg-white shadow rounded-xl p-6 flex flex-col items-center text-center hover:shadow-lg transition">
+          <img src="assets/category-puzzle.png" alt="益智类" class="w-16 h-16 mb-4">
+          <h3 class="text-lg font-semibold text-gray-900">益智类</h3>
+          <p class="text-sm text-gray-600 mb-3">锻炼思维，享受烧脑挑战。</p>
+          <a href="category.html" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">查看分类</a>
+        </article>
+        <article class="bg-white shadow rounded-xl p-6 flex flex-col items-center text-center hover:shadow-lg transition">
+          <img src="assets/category-sports.png" alt="体育类" class="w-16 h-16 mb-4">
+          <h3 class="text-lg font-semibold text-gray-900">体育类</h3>
+          <p class="text-sm text-gray-600 mb-3">足球、篮球等运动应有尽有。</p>
+          <a href="category.html" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">查看分类</a>
+        </article>
       </div>
     </section>
 
-    <!-- About Game -->
-    <section id="about" class="mb-12">
-      <h2 class="text-2xl font-bold text-gray-900 mb-4">About Monster Survivors</h2>
-      <p class="text-gray-700 leading-relaxed">
-        Monster Survivors is an addictive action survival game where waves of monsters never stop coming. 
-        You must dodge, fight, and grow stronger with every passing minute. Collect upgrades, 
-        unlock special powers, and test your limits against endless challenges.
-      </p>
-    </section>
-
-    <!-- How to Play -->
-    <section id="how-to-play" class="mb-12">
-      <h2 class="text-2xl font-bold text-gray-900 mb-4">How to Play</h2>
-      <ul class="list-disc pl-6 text-gray-700 space-y-2">
-        <li>Move around to avoid getting surrounded by monsters.</li>
-        <li>Defeat enemies to gain experience and level up.</li>
-        <li>Choose powerful upgrades to enhance your survival chances.</li>
-        <li>Stay alive as long as possible to achieve a high score.</li>
-      </ul>
-    </section>
-
-    <!-- Game Features -->
-    <section id="features" class="mb-12">
-      <h2 class="text-2xl font-bold text-gray-900 mb-4">Key Features</h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="p-6 bg-gray-50 rounded-xl shadow hover:shadow-lg transition">
-          <h3 class="text-lg font-semibold text-blue-600 mb-2">Endless Survival</h3>
-          <p class="text-gray-700">Fight against infinite waves of monsters with increasing difficulty.</p>
-        </div>
-        <div class="p-6 bg-gray-50 rounded-xl shadow hover:shadow-lg transition">
-          <h3 class="text-lg font-semibold text-blue-600 mb-2">Upgrade System</h3>
-          <p class="text-gray-700">Unlock skills and power-ups to customize your survival strategy.</p>
-        </div>
-        <div class="p-6 bg-gray-50 rounded-xl shadow hover:shadow-lg transition">
-          <h3 class="text-lg font-semibold text-blue-600 mb-2">Challenging Gameplay</h3>
-          <p class="text-gray-700">Quick reflexes and smart decisions are key to staying alive.</p>
-        </div>
-        <div class="p-6 bg-gray-50 rounded-xl shadow hover:shadow-lg transition">
-          <h3 class="text-lg font-semibold text-blue-600 mb-2">Free to Play</h3>
-          <p class="text-gray-700">Enjoy Monster Survivors instantly in your browser, no downloads needed.</p>
-        </div>
+    <!-- 最新游戏 -->
+    <section>
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">最新上线</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <article class="bg-white shadow rounded-xl overflow-hidden hover:shadow-lg transition">
+          <img src="assets/game1.jpg" alt="Game One" class="w-full h-40 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-900">Game One</h3>
+            <p class="text-sm text-gray-600 mb-3">Short description of Game One.</p>
+            <a href="game.html" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">立即开始</a>
+          </div>
+        </article>
+        <article class="bg-white shadow rounded-xl overflow-hidden hover:shadow-lg transition">
+          <img src="assets/game2.jpg" alt="Game Two" class="w-full h-40 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-900">Game Two</h3>
+            <p class="text-sm text-gray-600 mb-3">Short description of Game Two.</p>
+            <a href="game.html" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">立即开始</a>
+          </div>
+        </article>
+        <article class="bg-white shadow rounded-xl overflow-hidden hover:shadow-lg transition">
+          <img src="assets/game3.jpg" alt="Game Three" class="w-full h-40 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-900">Game Three</h3>
+            <p class="text-sm text-gray-600 mb-3">Short description of Game Three.</p>
+            <a href="game.html" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">立即开始</a>
+          </div>
+        </article>
       </div>
     </section>
   </main>
 
   <!-- Footer -->
   <footer class="bg-gray-100 border-t py-6">
-    <div class="max-w-5xl mx-auto px-4 text-center text-gray-600 text-sm">
-      © 2025 MonsterSurvivors.com · All rights reserved.
+    <div class="max-w-6xl mx-auto px-4 text-center text-gray-600 text-sm">
+      © 2025 LovePlaying.online - All Rights Reserved. <br />
+      联系我们: <a href="mailto:contact@loveplaying.online" class="text-blue-600 hover:underline">contact@loveplaying.online</a>
     </div>
   </footer>
 </body>
