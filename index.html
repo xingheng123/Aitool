@@ -1,140 +1,96 @@
+
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Category Card Component</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Monster Survivors - Play Free Online Survival Game</title>
+  <meta name="description" content="Play Monster Survivors, a thrilling survival action game. Fight endless monsters, unlock skills, and see how long you can survive. Free to play online now!" />
+  <link rel="canonical" href="https://monstersurvivors.com/" />
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 p-8">
-  <!-- Category Card Component (Large Version) -->
-  <article class="bg-white rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 overflow-hidden group cursor-pointer">
-    <!-- Category image/thumbnail -->
-    <div class="relative h-48 bg-gradient-to-br from-purple-400 via-pink-500 to-red-400 overflow-hidden">
-      <!-- Background pattern -->
-      <div class="absolute inset-0 opacity-20">
-        <div class="w-full h-full" style="background-image: url('data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><circle cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;25&quot; fill=&quot;white&quot; opacity=&quot;0.1&quot;/><circle cx=&quot;20&quot; cy=&quot;20&quot; r=&quot;15&quot; fill=&quot;white&quot; opacity=&quot;0.1&quot;/><circle cx=&quot;80&quot; cy=&quot;80&quot; r=&quot;20&quot; fill=&quot;white&quot; opacity=&quot;0.1&quot;/></svg>')"></div>
-      </div>
-      
-      <!-- Category icon -->
-      <div class="absolute inset-0 flex items-center justify-center">
-        <div class="w-20 h-20 bg-white bg-opacity-20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-          <!-- TODO: 根据分类动态显示不同图标 -->
-          <span class="text-4xl">🎮</span>
-        </div>
-      </div>
-
-      <!-- Game count badge -->
-      <div class="absolute top-4 right-4 bg-white bg-opacity-90 rounded-full px-3 py-1">
-        <span class="text-sm font-semibold text-gray-700">25+ 游戏</span>
-      </div>
-
-      <!-- Hover overlay -->
-      <div class="absolute inset-0 bg-black bg-opacity-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<body class="bg-white text-gray-900 font-sans antialiased">
+  <!-- Header -->
+  <header class="w-full bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
+      <h1 class="text-2xl font-bold text-blue-600">Monster Survivors</h1>
+      <nav>
+        <ul class="flex gap-6 text-gray-700 font-medium">
+          <li><a href="#about" class="hover:text-blue-600">About</a></li>
+          <li><a href="#how-to-play" class="hover:text-blue-600">How to Play</a></li>
+          <li><a href="#features" class="hover:text-blue-600">Features</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <!-- Card content -->
-    <div class="p-6">
-      <!-- Category title -->
-      <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors duration-200">
-        动作游戏
-      </h3>
+  <!-- Main Content -->
+  <main class="max-w-5xl mx-auto px-4 py-10">
+    <!-- Game Title -->
+    <section class="mb-8 text-center">
+      <h1 class="text-4xl font-extrabold text-gray-900 mb-4">Monster Survivors</h1>
+      <p class="text-lg text-gray-600">A fast-paced survival game where every second counts.</p>
+    </section>
 
-      <!-- Category description -->
-      <p class="text-gray-600 text-sm leading-relaxed mb-4">
-        体验刺激的动作游戏！包含格斗、射击、生存等多种类型，让你在紧张刺激的游戏世界中释放压力。
+    <!-- Game Iframe -->
+    <section class="mb-12">
+      <div class="relative w-full" style="padding-top: 56.25%;">
+        <iframe src="https://cloud.onlinegames.io/games/2025/unity/monster-survivors/index-og.html"
+          class="absolute top-0 left-0 w-full h-full rounded-2xl shadow-md"
+          frameborder="0" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- About Game -->
+    <section id="about" class="mb-12">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4">About Monster Survivors</h2>
+      <p class="text-gray-700 leading-relaxed">
+        Monster Survivors is an addictive action survival game where waves of monsters never stop coming. 
+        You must dodge, fight, and grow stronger with every passing minute. Collect upgrades, 
+        unlock special powers, and test your limits against endless challenges.
       </p>
+    </section>
 
-      <!-- Popular games preview -->
-      <div class="flex items-center mb-4">
-        <span class="text-sm text-gray-500 mr-2">热门游戏：</span>
-        <div class="flex -space-x-2">
-          <!-- TODO: 动态显示该分类下的热门游戏缩略图 -->
-          <img src="https://via.placeholder.com/32x32/4F46E5/FFFFFF" alt="游戏1" class="w-8 h-8 rounded-full border-2 border-white" />
-          <img src="https://via.placeholder.com/32x32/EC4899/FFFFFF" alt="游戏2" class="w-8 h-8 rounded-full border-2 border-white" />
-          <img src="https://via.placeholder.com/32x32/10B981/FFFFFF" alt="游戏3" class="w-8 h-8 rounded-full border-2 border-white" />
-          <div class="w-8 h-8 rounded-full border-2 border-white bg-gray-300 flex items-center justify-center">
-            <span class="text-xs font-medium text-gray-600">+5</span>
-          </div>
+    <!-- How to Play -->
+    <section id="how-to-play" class="mb-12">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4">How to Play</h2>
+      <ul class="list-disc pl-6 text-gray-700 space-y-2">
+        <li>Move around to avoid getting surrounded by monsters.</li>
+        <li>Defeat enemies to gain experience and level up.</li>
+        <li>Choose powerful upgrades to enhance your survival chances.</li>
+        <li>Stay alive as long as possible to achieve a high score.</li>
+      </ul>
+    </section>
+
+    <!-- Game Features -->
+    <section id="features" class="mb-12">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4">Key Features</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="p-6 bg-gray-50 rounded-xl shadow hover:shadow-lg transition">
+          <h3 class="text-lg font-semibold text-blue-600 mb-2">Endless Survival</h3>
+          <p class="text-gray-700">Fight against infinite waves of monsters with increasing difficulty.</p>
+        </div>
+        <div class="p-6 bg-gray-50 rounded-xl shadow hover:shadow-lg transition">
+          <h3 class="text-lg font-semibold text-blue-600 mb-2">Upgrade System</h3>
+          <p class="text-gray-700">Unlock skills and power-ups to customize your survival strategy.</p>
+        </div>
+        <div class="p-6 bg-gray-50 rounded-xl shadow hover:shadow-lg transition">
+          <h3 class="text-lg font-semibold text-blue-600 mb-2">Challenging Gameplay</h3>
+          <p class="text-gray-700">Quick reflexes and smart decisions are key to staying alive.</p>
+        </div>
+        <div class="p-6 bg-gray-50 rounded-xl shadow hover:shadow-lg transition">
+          <h3 class="text-lg font-semibold text-blue-600 mb-2">Free to Play</h3>
+          <p class="text-gray-700">Enjoy Monster Survivors instantly in your browser, no downloads needed.</p>
         </div>
       </div>
+    </section>
+  </main>
 
-      <!-- Action button -->
-      <button class="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-purple-200">
-        🔍 查看分类
-      </button>
+  <!-- Footer -->
+  <footer class="bg-gray-100 border-t py-6">
+    <div class="max-w-5xl mx-auto px-4 text-center text-gray-600 text-sm">
+      © 2025 MonsterSurvivors.com · All rights reserved.
     </div>
-  </article>
-
-  <!-- Compact Category Card Version -->
-  <div class="mt-8">
-    <h2 class="text-lg font-semibold mb-4 text-gray-700">紧凑版本示例：</h2>
-    
-    <article class="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-200 overflow-hidden group cursor-pointer">
-      <div class="flex items-center p-4">
-        <!-- Icon -->
-        <div class="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-500 rounded-xl flex items-center justify-center flex-shrink-0 mr-4 group-hover:scale-110 transition-transform duration-200">
-          <span class="text-2xl">🎮</span>
-        </div>
-
-        <!-- Content -->
-        <div class="flex-1">
-          <h3 class="font-bold text-gray-900 mb-1 group-hover:text-purple-600 transition-colors">动作游戏</h3>
-          <p class="text-sm text-gray-600 mb-2">刺激的动作游戏合集</p>
-          <div class="flex items-center justify-between">
-            <span class="text-xs text-gray-500">25+ 游戏</span>
-            <button class="text-sm bg-purple-100 text-purple-700 hover:bg-purple-200 px-3 py-1 rounded-full transition-colors">
-              查看 →
-            </button>
-          </div>
-        </div>
-      </div>
-    </article>
-  </div>
-
-  <!-- Grid Version Examples -->
-  <div class="mt-8">
-    <h2 class="text-lg font-semibold mb-4 text-gray-700">网格布局示例：</h2>
-    
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- Category 1: Action Games -->
-      <article class="bg-gradient-to-br from-red-400 to-red-600 rounded-xl p-6 text-white hover:shadow-xl transform hover:scale-105 transition-all duration-300 cursor-pointer group">
-        <div class="text-4xl mb-4">🎮</div>
-        <h3 class="text-xl font-bold mb-2">动作游戏</h3>
-        <p class="text-red-100 text-sm mb-4">25+ 游戏</p>
-        <div class="text-right">
-          <span class="text-red-200 group-hover:text-white transition-colors">查看分类 →</span>
-        </div>
-      </article>
-
-      <!-- Category 2: Puzzle Games -->
-      <article class="bg-gradient-to-br from-blue-400 to-blue-600 rounded-xl p-6 text-white hover:shadow-xl transform hover:scale-105 transition-all duration-300 cursor-pointer group">
-        <div class="text-4xl mb-4">🧩</div>
-        <h3 class="text-xl font-bold mb-2">益智游戏</h3>
-        <p class="text-blue-100 text-sm mb-4">18+ 游戏</p>
-        <div class="text-right">
-          <span class="text-blue-200 group-hover:text-white transition-colors">查看分类 →</span>
-        </div>
-      </article>
-
-      <!-- Category 3: Racing Games -->
-      <article class="bg-gradient-to-br from-green-400 to-green-600 rounded-xl p-6 text-white hover:shadow-xl transform hover:scale-105 transition-all duration-300 cursor-pointer group">
-        <div class="text-4xl mb-4">🏎️</div>
-        <h3 class="text-xl font-bold mb-2">竞速游戏</h3>
-        <p class="text-green-100 text-sm mb-4">12+ 游戏</p>
-        <div class="text-right">
-          <span class="text-green-200 group-hover:text-white transition-colors">查看分类 →</span>
-        </div>
-      </article>
-    </div>
-  </div>
-
-  <!-- TODO: 添加分类数据管理 -->
-  <!-- 这里将来可以通过 JavaScript 动态加载分类数据和统计信息 -->
-  
-  <script>
-    // TODO: 添加分类卡片交互功能
-    // 可以添加点击跳转、数据加载等功能
-  </script>
+  </footer>
 </body>
 </html>
