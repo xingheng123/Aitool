@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>游戏详情 - LovePlaying.online</title>
+  <title>Game Detail - LovePlaying.online</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="js/render.js" defer></script>
 </head>
 <body class="bg-white text-gray-900 font-sans antialiased">
 
@@ -14,7 +14,7 @@
   </header>
 
   <main class="max-w-6xl mx-auto px-4 py-12">
-    <h1 id="game-title" class="text-3xl font-bold mb-4">游戏加载中...</h1>
+    <h1 id="game-title" class="text-3xl font-bold mb-4">Loading game...</h1>
     <p id="game-description" class="text-gray-600 mb-6"></p>
 
     <div class="relative w-full mb-12" style="padding-top: 62.5%;">
@@ -26,6 +26,30 @@
   </main>
 
   <script>
+    async function loadGameDetail() {
+      const params = new URLSearchParams(window.location.search);
+      const gameId = params.get("id");
+
+      try {
+        const response = await fetch("/games.json");
+        const games = await response.json();
+
+        const game = games.find(g => g.id === gameId);
+
+        if (game) {
+          document.getElementById("game-title").textContent = game.title;
+          document.getElementById("game-description").textContent = game.description;
+          document.getElementById("game-iframe").src = game.iframe;
+        } else {
+          document.getElementById("game-title").textContent = "Game not found";
+          document.getElementById("game-description").textContent = "";
+        }
+      } catch (error) {
+        console.error("Error loading game detail:", error);
+        document.getElementById("game-title").textContent = "Error loading game.";
+      }
+    }
+
     document.addEventListener("DOMContentLoaded", () => {
       loadGameDetail();
     });
