@@ -1,0 +1,4 @@
+<img src="assets/game2.jpg" 
+     alt="Alien Defense" 
+     class="w-full h-48 object-cover rounded-lg shadow" 
+     onerror="this.src='assets/placeholder.jpg'">
