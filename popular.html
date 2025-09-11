@@ -7,6 +7,7 @@
   <meta name="description" content="Check out the most popular online games at LovePlaying.online. See what everyone is playing now." />
   <link rel="canonical" href="https://loveplaying.online/popular.html" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/render.js" defer></script>
 </head>
 <body class="bg-white text-gray-900 font-sans antialiased">
 
@@ -17,7 +18,7 @@
       <nav>
         <ul class="flex gap-6 text-gray-700 font-medium">
           <li><a href="index.html" class="hover:text-blue-600">首页</a></li>
-          <li><a href="category.html" class="hover:text-blue-600">分类</a></li>
+          <li><a href="category.html?category=action" class="hover:text-blue-600">分类</a></li>
           <li><a href="latest.html" class="hover:text-blue-600">最新游戏</a></li>
           <li><a href="popular.html" class="hover:text-blue-600">热门游戏</a></li>
           <li><a href="about.html" class="hover:text-blue-600">关于我们</a></li>
@@ -28,31 +29,8 @@
 
   <main class="max-w-6xl mx-auto px-4 py-12">
     <h1 class="text-3xl font-bold text-gray-900 mb-6">热门游戏</h1>
-    <div class="grid md:grid-cols-3 gap-6">
-      <article class="bg-white shadow rounded-xl overflow-hidden hover:shadow-lg transition">
-        <img src="assets/game1.jpg" alt="Popular Game 1" class="w-full h-40 object-cover">
-        <div class="p-4">
-          <h3 class="text-lg font-semibold text-gray-900">Popular Game One</h3>
-          <p class="text-sm text-gray-600 mb-3">Most played survival game this month.</p>
-          <a href="game.html" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">立即开始</a>
-        </div>
-      </article>
-      <article class="bg-white shadow rounded-xl overflow-hidden hover:shadow-lg transition">
-        <img src="assets/game2.jpg" alt="Popular Game 2" class="w-full h-40 object-cover">
-        <div class="p-4">
-          <h3 class="text-lg font-semibold text-gray-900">Popular Game Two</h3>
-          <p class="text-sm text-gray-600 mb-3">Classic puzzle loved by thousands.</p>
-          <a href="game.html" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">立即开始</a>
-        </div>
-      </article>
-      <article class="bg-white shadow rounded-xl overflow-hidden hover:shadow-lg transition">
-        <img src="assets/game3.jpg" alt="Popular Game 3" class="w-full h-40 object-cover">
-        <div class="p-4">
-          <h3 class="text-lg font-semibold text-gray-900">Popular Game Three</h3>
-          <p class="text-sm text-gray-600 mb-3">Sports game ranked #1 in community.</p>
-          <a href="game.html" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">立即开始</a>
-        </div>
-      </article>
+    <div id="popular-games" class="grid md:grid-cols-3 gap-6">
+      <!-- JS 会填充 -->
     </div>
   </main>
 
@@ -60,8 +38,38 @@
   <footer class="bg-gray-100 border-t py-6">
     <div class="max-w-6xl mx-auto px-4 text-center text-gray-600 text-sm">
       © 2025 LovePlaying.online - All Rights Reserved. <br />
-      联系我们: <a href="mailto:contact@loveplaying.online" class="text-blue-600 hover:underline">contact@loveplaying.online</a>
+      联系我们: 
+      <a href="mailto:contact@loveplaying.online" class="text-blue-600 hover:underline">contact@loveplaying.online</a>
     </div>
   </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      const response = await fetch("games.json");
+      const games = await response.json();
+      const popularGames = games.filter(g => g.popular === true);
+
+      const container = document.getElementById("popular-games");
+      container.innerHTML = "";
+
+      popularGames.forEach(game => {
+        const card = document.createElement("article");
+        card.className = "bg-white shadow rounded-xl overflow-hidden hover:shadow-lg transition";
+
+        card.innerHTML = `
+          <img src="${game.thumbnail}" alt="${game.title}" class="w-full h-40 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-900">${game.title}</h3>
+            <p class="text-sm text-gray-600 mb-3">${game.description}</p>
+            <a href="game.html?id=${game.id}" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+              立即开始
+            </a>
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+    });
+  </script>
 </body>
 </html>
