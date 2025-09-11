@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <title>LovePlaying.online - Play Free Games</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- 只引入一次 render.js -->
   <script src="js/render.js" defer></script>
 </head>
 <body class="bg-white text-gray-900 font-sans antialiased">
@@ -13,41 +14,21 @@
     <h1 class="text-2xl font-bold text-blue-600">LovePlaying.online</h1>
   </header>
 
+  <!-- Main -->
   <main class="max-w-6xl mx-auto px-4 py-12">
     <h2 class="text-2xl font-bold mb-6">最新游戏</h2>
+    <!-- ✅ 只保留一个容器 -->
     <div id="latest-games" class="grid md:grid-cols-3 gap-6">
       <!-- JS 会填充卡片 -->
     </div>
   </main>
-  <div id="latest-games" class="grid md:grid-cols-3 gap-6"></div>
 
-<script src="js/render.js" defer></script>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    loadGames("latest-games");  // ✅ 必须调用
-  });
-</script>
-  <section class="py-12">
-  <div class="container mx-auto px-4">
-    <h2 class="text-2xl font-bold mb-6">最新游戏</h2>
-    <div id="latest-games" class="grid md:grid-cols-3 gap-6"></div>
-  </div>
-</section>
-
-<script src="js/render.js" defer></script>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    loadGames("latest-games", null, 6); // 加载6个最新游戏
-  });
-</script>
-
-
-
+  <!-- ✅ 页面加载后调用一次 loadGames -->
   <script>
-    // 页面加载时渲染最新游戏
     document.addEventListener("DOMContentLoaded", () => {
-      loadGames("latest-games");
+      loadGames("latest-games", null, 6); // 渲染6个最新游戏
     });
   </script>
+
 </body>
 </html>
