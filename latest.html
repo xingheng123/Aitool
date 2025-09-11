@@ -7,6 +7,7 @@
   <meta name="description" content="Discover the latest online games at LovePlaying.online. Play new releases instantly in your browser." />
   <link rel="canonical" href="https://loveplaying.online/latest.html" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/render.js" defer></script>
 </head>
 <body class="bg-white text-gray-900 font-sans antialiased">
 
@@ -17,7 +18,7 @@
       <nav>
         <ul class="flex gap-6 text-gray-700 font-medium">
           <li><a href="index.html" class="hover:text-blue-600">首页</a></li>
-          <li><a href="category.html" class="hover:text-blue-600">分类</a></li>
+          <li><a href="category.html?category=action" class="hover:text-blue-600">分类</a></li>
           <li><a href="latest.html" class="hover:text-blue-600">最新游戏</a></li>
           <li><a href="popular.html" class="hover:text-blue-600">热门游戏</a></li>
           <li><a href="about.html" class="hover:text-blue-600">关于我们</a></li>
@@ -28,32 +29,8 @@
 
   <main class="max-w-6xl mx-auto px-4 py-12">
     <h1 class="text-3xl font-bold text-gray-900 mb-6">最新游戏</h1>
-    <div class="grid md:grid-cols-3 gap-6">
-      <!-- 示例三款游戏 -->
-      <article class="bg-white shadow rounded-xl overflow-hidden hover:shadow-lg transition">
-        <img src="assets/game1.jpg" alt="New Game 1" class="w-full h-40 object-cover">
-        <div class="p-4">
-          <h3 class="text-lg font-semibold text-gray-900">New Game One</h3>
-          <p class="text-sm text-gray-600 mb-3">Brand new action-packed experience.</p>
-          <a href="game.html" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">立即开始</a>
-        </div>
-      </article>
-      <article class="bg-white shadow rounded-xl overflow-hidden hover:shadow-lg transition">
-        <img src="assets/game2.jpg" alt="New Game 2" class="w-full h-40 object-cover">
-        <div class="p-4">
-          <h3 class="text-lg font-semibold text-gray-900">New Game Two</h3>
-          <p class="text-sm text-gray-600 mb-3">Challenging puzzles and fun gameplay.</p>
-          <a href="game.html" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">立即开始</a>
-        </div>
-      </article>
-      <article class="bg-white shadow rounded-xl overflow-hidden hover:shadow-lg transition">
-        <img src="assets/game3.jpg" alt="New Game 3" class="w-full h-40 object-cover">
-        <div class="p-4">
-          <h3 class="text-lg font-semibold text-gray-900">New Game Three</h3>
-          <p class="text-sm text-gray-600 mb-3">Sports game with real competition feel.</p>
-          <a href="game.html" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">立即开始</a>
-        </div>
-      </article>
+    <div id="latest-games" class="grid md:grid-cols-3 gap-6">
+      <!-- JS 会填充 -->
     </div>
   </main>
 
@@ -61,8 +38,16 @@
   <footer class="bg-gray-100 border-t py-6">
     <div class="max-w-6xl mx-auto px-4 text-center text-gray-600 text-sm">
       © 2025 LovePlaying.online - All Rights Reserved. <br />
-      联系我们: <a href="mailto:contact@loveplaying.online" class="text-blue-600 hover:underline">contact@loveplaying.online</a>
+      联系我们: 
+      <a href="mailto:contact@loveplaying.online" class="text-blue-600 hover:underline">contact@loveplaying.online</a>
     </div>
   </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      // 假设 games.json 已按发布时间排序（新游戏排前面）
+      await loadGames("latest-games");
+    });
+  </script>
 </body>
 </html>
