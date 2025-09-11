@@ -27,6 +27,20 @@
     loadGames("latest-games");  // ✅ 必须调用
   });
 </script>
+  <section class="py-12">
+  <div class="container mx-auto px-4">
+    <h2 class="text-2xl font-bold mb-6">最新游戏</h2>
+    <div id="latest-games" class="grid md:grid-cols-3 gap-6"></div>
+  </div>
+</section>
+
+<script src="js/render.js" defer></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    loadGames("latest-games", null, 6); // 加载6个最新游戏
+  });
+</script>
+
 
 
   <script>
