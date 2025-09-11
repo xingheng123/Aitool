@@ -19,6 +19,15 @@
       <!-- JS 会填充卡片 -->
     </div>
   </main>
+  <div id="latest-games" class="grid md:grid-cols-3 gap-6"></div>
+
+<script src="js/render.js" defer></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    loadGames("latest-games");  // ✅ 必须调用
+  });
+</script>
+
 
   <script>
     // 页面加载时渲染最新游戏
