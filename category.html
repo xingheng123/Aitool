@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>动作类游戏 - LovePlaying.online</title>
-  <meta name="description" content="Play action games online at LovePlaying.online. Discover thrilling and fast-paced games for free." />
+  <title>Game Categories - LovePlaying.online</title>
+  <meta name="description" content="Browse free online games by category on LovePlaying.online. Action, puzzle, sports, and more!" />
   <link rel="canonical" href="https://loveplaying.online/category.html" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/render.js" defer></script>
 </head>
 <body class="bg-white text-gray-900 font-sans antialiased">
 
@@ -17,7 +18,9 @@
       <nav>
         <ul class="flex gap-6 text-gray-700 font-medium">
           <li><a href="index.html" class="hover:text-blue-600">首页</a></li>
-          <li><a href="category.html" class="hover:text-blue-600">分类</a></li>
+          <li><a href="category.html?category=action" class="hover:text-blue-600">动作类</a></li>
+          <li><a href="category.html?category=puzzle" class="hover:text-blue-600">益智类</a></li>
+          <li><a href="category.html?category=sports" class="hover:text-blue-600">体育类</a></li>
           <li><a href="latest.html" class="hover:text-blue-600">最新游戏</a></li>
           <li><a href="popular.html" class="hover:text-blue-600">热门游戏</a></li>
           <li><a href="about.html" class="hover:text-blue-600">关于我们</a></li>
@@ -27,39 +30,19 @@
   </header>
 
   <main class="max-w-6xl mx-auto px-4 py-12">
+    <!-- 分类标题 -->
     <section class="mb-10 text-center">
-      <h1 class="text-3xl font-bold text-gray-900 mb-4">动作类游戏</h1>
-      <p class="text-gray-600">Explore exciting action games with fast-paced battles and endless adventures.</p>
+      <h1 id="category-title" class="text-3xl font-bold text-gray-900 mb-4">
+        分类加载中...
+      </h1>
+      <p id="category-description" class="text-gray-600">
+        正在加载该分类下的游戏，请稍候...
+      </p>
     </section>
 
     <!-- 游戏列表 -->
-    <section class="grid md:grid-cols-3 gap-6">
-      <article class="bg-white shadow rounded-xl overflow-hidden hover:shadow-lg transition">
-        <img src="assets/game1.jpg" alt="Action Game 1" class="w-full h-40 object-cover">
-        <div class="p-4">
-          <h3 class="text-lg font-semibold text-gray-900">Action Game One</h3>
-          <p class="text-sm text-gray-600 mb-3">Fight monsters and survive as long as you can.</p>
-          <a href="game.html" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">立即开始</a>
-        </div>
-      </article>
-
-      <article class="bg-white shadow rounded-xl overflow-hidden hover:shadow-lg transition">
-        <img src="assets/game2.jpg" alt="Action Game 2" class="w-full h-40 object-cover">
-        <div class="p-4">
-          <h3 class="text-lg font-semibold text-gray-900">Action Game Two</h3>
-          <p class="text-sm text-gray-600 mb-3">Fast-paced shooting adventure.</p>
-          <a href="game.html" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">立即开始</a>
-        </div>
-      </article>
-
-      <article class="bg-white shadow rounded-xl overflow-hidden hover:shadow-lg transition">
-        <img src="assets/game3.jpg" alt="Action Game 3" class="w-full h-40 object-cover">
-        <div class="p-4">
-          <h3 class="text-lg font-semibold text-gray-900">Action Game Three</h3>
-          <p class="text-sm text-gray-600 mb-3">Jump, run, and conquer enemies.</p>
-          <a href="game.html" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">立即开始</a>
-        </div>
-      </article>
+    <section id="category-games" class="grid md:grid-cols-3 gap-6">
+      <!-- JS 会自动插入游戏卡片 -->
     </section>
   </main>
 
@@ -67,8 +50,39 @@
   <footer class="bg-gray-100 border-t py-6">
     <div class="max-w-6xl mx-auto px-4 text-center text-gray-600 text-sm">
       © 2025 LovePlaying.online - All Rights Reserved. <br />
-      联系我们: <a href="mailto:contact@loveplaying.online" class="text-blue-600 hover:underline">contact@loveplaying.online</a>
+      联系我们: 
+      <a href="mailto:contact@loveplaying.online" class="text-blue-600 hover:underline">
+        contact@loveplaying.online
+      </a>
     </div>
   </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const params = new URLSearchParams(window.location.search);
+      const category = params.get("category") || "action";
+
+      // 分类中文标题映射
+      const categoryNames = {
+        action: "动作类游戏",
+        puzzle: "益智类游戏",
+        sports: "体育类游戏"
+      };
+
+      const descriptions = {
+        action: "Fast-paced, thrilling action games for true warriors.",
+        puzzle: "Mind-bending puzzles to challenge your brain.",
+        sports: "Exciting sports games for competition and fun."
+      };
+
+      document.getElementById("category-title").textContent =
+        categoryNames[category] || "游戏分类";
+      document.getElementById("category-description").textContent =
+        descriptions[category] || "Browse the latest games in this category.";
+
+      // 调用渲染函数，筛选对应分类
+      loadGames("category-games", category);
+    });
+  </script>
 </body>
 </html>
