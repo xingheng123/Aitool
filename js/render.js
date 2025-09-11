@@ -51,6 +51,7 @@ async function loadGames(targetId, filterCategory = null, limit = null) {
       container.innerHTML = '<p class="text-gray-500">No games found.</p>';
       return;
     }
+<div id="latest-games"></div>
 
     container.innerHTML = '';
     filtered.forEach(game => {
