@@ -1,0 +1,4 @@
+<img src="assets/game1.jpg" 
+     alt="Zombie Attack" 
+     class="w-full h-48 object-cover rounded-lg shadow" 
+     onerror="this.src='assets/placeholder.jpg'">
