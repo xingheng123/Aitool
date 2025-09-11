@@ -1,0 +1,4 @@
+<img src="assets/monster-survivors-banner.jpg" 
+     alt="Monster Survivors" 
+     class="w-full h-48 object-cover rounded-lg shadow" 
+     onerror="this.src='assets/placeholder.jpg'">
