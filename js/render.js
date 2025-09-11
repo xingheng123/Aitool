@@ -1,4 +1,4 @@
-// render.js - clean version for LovePlaying.online
+﻿// render.js - clean version for LovePlaying.online
 
 // 读取 games.json
 async function fetchGamesJson() {
