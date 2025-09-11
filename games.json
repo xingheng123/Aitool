@@ -3,7 +3,7 @@
     "id": "monster-survivors",
     "title": "Monster Survivors",
     "description": "Fight endless waves of monsters in this thrilling survival challenge.",
-    "thumbnail": "assets/monster-survivors-banner.jpg",
+    "thumbnail": "assets/placeholder.jpg",
     "iframe": "https://cloud.onlinegames.io/games/2025/unity/monster-survivors/index-og.html",
     "category": "action",
     "popular": true
@@ -12,7 +12,7 @@
     "id": "zombie-attack",
     "title": "Zombie Attack",
     "description": "Survive zombie waves and upgrade your weapons to stay alive.",
-    "thumbnail": "assets/game1.jpg",
+    "thumbnail": "assets/placeholder.jpg",
     "iframe": "https://example.com/zombie-attack",
     "category": "action",
     "popular": true
@@ -21,7 +21,7 @@
     "id": "alien-defense",
     "title": "Alien Defense",
     "description": "Defend Earth from alien invaders in this action-packed shooter.",
-    "thumbnail": "assets/game2.jpg",
+    "thumbnail": "assets/placeholder.jpg",
     "iframe": "https://example.com/alien-defense",
     "category": "action",
     "popular": false
@@ -30,7 +30,7 @@
     "id": "puzzle-quest",
     "title": "Puzzle Quest",
     "description": "Solve mind-bending puzzles and unlock mysterious secrets.",
-    "thumbnail": "assets/game3.jpg",
+    "thumbnail": "assets/placeholder.jpg",
     "iframe": "https://example.com/puzzle-quest",
     "category": "puzzle",
     "popular": true
@@ -39,7 +39,7 @@
     "id": "soccer-champ",
     "title": "Soccer Champ",
     "description": "Compete in exciting soccer matches and score the winning goal.",
-    "thumbnail": "assets/game4.jpg",
+    "thumbnail": "assets/placeholder.jpg",
     "iframe": "https://example.com/soccer-champ",
     "category": "sports",
     "popular": false
