@@ -9,13 +9,15 @@
     "popular": true
   },
   {
-    "id": "zombie-attack",
-    "title": "Zombie Attack",
-    "description": "Survive zombie waves and upgrade your weapons to stay alive.",
-    "thumbnail": "assets/game1.jpg",
-    "iframe": "https://example.com/zombie-attack",
-    "category": "action",
-    "popular": true
+{
+  "id": "simple-pong-game",
+  "title": "简单乒乓球（Pong）游戏",
+  "description": "一款经典的Pong桌面乒乓球小游戏。玩家通过鼠标控制左侧球拍，与由AI控制的右侧球拍对战。包含真实弹球和碰撞检测，画面简洁明快，适合快速娱乐。",
+  "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Pong.png",
+  "iframe": "index.html",
+  "category": "休闲, 益智, 体育",
+  "popular": true
+}
   },
   {
     "id": "alien-defense",
